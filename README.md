@@ -27,13 +27,17 @@ A modern, production-ready boilerplate for building cross-platform desktop apps 
    git clone https://github.com/yourusername/nextjs-electron-tailwind-template.git my-app
    cd my-app
    ```
-
-2. Install dependencies:
+2. Create Environment Vars:
+    it contain a required var 
+    ```
+    NODE_ENV=development
+    ```
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Start development:
+4. Start development:
    ```bash
    npm run electron
    ```
@@ -44,9 +48,8 @@ A modern, production-ready boilerplate for building cross-platform desktop apps 
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start Next.js dev server only. |
-| `npm run electron` | Start Electron + Next.js in dev mode (concurrent). |
-| `npm run build` | Build Next.js for production (static export). |
-| `npm run start` | Run the built Electron app. |
+| `npm run electron:dev` | Start Electron + Next.js in dev mode (concurrent). |
+| `npm run electron:build` | Build Next.js for production (static export). |
 | `npm run lint` | Run ESLint. |
 
 ### Production Build
@@ -67,13 +70,13 @@ my-app/
 │   ├── main.js        # Main process (window creation)
 │   └── preload.js     # Preload script (API exposure)
 ├── src/               # Next.js source
-│   ├── app/           # App Router pages
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css # Tailwind imports
-│   └── components/    # Reusable UI components
+│   ├─ app/           # App Router pages
+│     ├── layout.tsx
+│     ├── page.tsx
+│     └── globals.css # Tailwind imports
 ├── public/            # Static assets
 ├── tailwind.config.ts # Custom Tailwind (sizing, themes)
+│── components/    # Reusable UI components
 ├── package.json       # Dependencies & scripts
 └── next.config.js     # Next.js config (for Electron)
 ```
